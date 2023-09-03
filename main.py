@@ -1,11 +1,20 @@
-from PyQt5.QtWidgets import QWidget , QApplication , QLabel , QPushButton
+from PyQt5 import QtWidgets, uic
+import sys, os
 
-app = QApplication([])
 
-window = QWidget()
+class MyWindow(QtWidgets.QWidget):
 
-btn = QPushButton("click me!" , parent=window)
-window.setWindowTitle("My dear application!")
-window.show()
+    def __init__(self, *args, **kwargs):
+        super(MyWindow, self).__init__(*args, **kwargs)
 
-app.exec()
+        # Load the UI Page - added path too
+        ui_path = os.path.dirname(os.path.abspath(__file__))
+        uic.loadUi(os.path.join(ui_path, "calculator.ui"), self)
+
+
+
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    main = MyWindow()
+    main.show()
+    sys.exit(app.exec_())
