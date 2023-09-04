@@ -9,7 +9,7 @@ class MyWindow(QtWidgets.QWidget):
 
         # Load the UI Page - added path too
         ui_path = os.path.dirname(os.path.abspath(__file__))
-        uic.loadUi(os.path.join(ui_path, "calculator.ui"), self)
+        uic.loadUi(os.path.join(ui_path, "calculator (2).ui"), self)
 
 
 
@@ -17,4 +17,5 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     main = MyWindow()
     main.show()
+    
     sys.exit(app.exec_())
