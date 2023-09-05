@@ -235,6 +235,12 @@ class Ui_MyCalculator(object):
             self.lineEdit.setText(m)
         self.pushButton_17.clicked.connect(backshift)
 
+        def off() :
+            exit()
+           
+        self.pushButton_2.clicked.connect(off)
+
+
         
 # this section is for opening and closing the window 
 
