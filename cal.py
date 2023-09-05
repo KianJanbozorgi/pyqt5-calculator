@@ -10,7 +10,8 @@
 from math import sqrt
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
+# I got the the widgets and app ui from ui designer , I designed it there 
+# and it gave me the code 
 class Ui_MyCalculator(object):
     def setupUi(self, MyCalculator):
         MyCalculator.setObjectName("MyCalculator")
@@ -86,92 +87,7 @@ class Ui_MyCalculator(object):
         self.pushButton_7.setObjectName("pushButton_7")
         self.gridLayout.addWidget(self.pushButton_7, 5, 2, 1, 1)
         self.horizontalLayout.addLayout(self.gridLayout)
-        def fun7() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "7")
-           
-        self.pushButton.clicked.connect(fun7)
-        def fun1() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "1")
-        self.pushButton_10.clicked.connect(fun1)   
-        def fun2() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "2")
-        self.pushButton_11.clicked.connect(fun2)
-        def fun3() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "3")
-        self.pushButton_12.clicked.connect(fun3)
-        def fun4() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "4")
-        self.pushButton_3.clicked.connect(fun4)
-        def fun5() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "5")
-        self.pushButton_4.clicked.connect(fun5)
-        def fun6() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "6")
-        self.pushButton_7.clicked.connect(fun6)
-        def fun8() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "8")
-        self.pushButton_5.clicked.connect(fun8)
-        def fun9() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "9")
-        self.pushButton_8.clicked.connect(fun9)
-        def fun0() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "0")
-        self.pushButton_6.clicked.connect(fun0)
-        def plus() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "+")
-        self.pushButton_20.clicked.connect(plus)
-        def division() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "/")
-        self.pushButton_15.clicked.connect(division)
-        def sub() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "-")
-        self.pushButton_19.clicked.connect(sub)
-        def multipy() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "*")
-        self.pushButton_18.clicked.connect(multipy)
-        def squre() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + "**2")
-        self.pushButton_13.clicked.connect(squre)
-        def clear() :
-            self.lineEdit.clear()
-            
-        self.pushButton_16.clicked.connect(clear)
-        def sqrtt() :
-            text = self.lineEdit.text()
-            t = float(text)
-            s = sqrt(t)
-            self.lineEdit.setText(str(s))
-        self.pushButton_14.clicked.connect(sqrtt)
-        def equasion() :
-            text = self.lineEdit.text()
-            result = eval(text)
-            self.lineEdit.setText(str(result))
-        self.pushButton_21.clicked.connect(equasion)
-        def dot() :
-            text = self.lineEdit.text()
-            self.lineEdit.setText(text + ".")
-        self.pushButton_9.clicked.connect(dot)
-
-        def backshift() :
-            text = self.lineEdit.text()
-            m = text.replace(text[-1] , "")
-            self.lineEdit.setText(m)
-        self.pushButton_17.clicked.connect(backshift)
+       
         
         self.retranslateUi(MyCalculator)
         QtCore.QMetaObject.connectSlotsByName(MyCalculator)
@@ -222,8 +138,103 @@ class Ui_MyCalculator(object):
         self.pushButton_5.setText(_translate("MyCalculator", "8"))
         self.pushButton_7.setText(_translate("MyCalculator", "6"))
 
+        # my job started mostly here , making the buttons and signals
 
+        
+        # here im definig number buttons   
+        self.pushButton.clicked.connect(fun7)
+        def fun1() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "1")
+        self.pushButton_10.clicked.connect(fun1)   
+        def fun2() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "2")
+        self.pushButton_11.clicked.connect(fun2)
+        def fun3() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "3")
+        self.pushButton_12.clicked.connect(fun3)
+        def fun4() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "4")
+        self.pushButton_3.clicked.connect(fun4)
+        def fun5() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "5")
+        self.pushButton_4.clicked.connect(fun5)
+        def fun6() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "6")
+        self.pushButton_7.clicked.connect(fun6)
+        def fun7() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "7")
+        def fun8() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "8")
+        self.pushButton_5.clicked.connect(fun8)
+        def fun9() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "9")
+        self.pushButton_8.clicked.connect(fun9)
+        def fun0() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "0")
+        self.pushButton_6.clicked.connect(fun0)
+        # here Im defining operation buttons
+        def plus() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "+")
+        self.pushButton_20.clicked.connect(plus)
+        def division() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "/")
+        self.pushButton_15.clicked.connect(division)
+        def sub() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "-")
+        self.pushButton_19.clicked.connect(sub)
+        def multipy() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "*")
+        self.pushButton_18.clicked.connect(multipy)
+        def squre() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + "**2")
+        self.pushButton_13.clicked.connect(squre)
+        def clear() :
+            self.lineEdit.clear()
+            
+        self.pushButton_16.clicked.connect(clear)
+        # many of other calculators portfolio does not feature sqrt
+        # but mine does >__<
+        def sqrtt() :
+            text = self.lineEdit.text()
+            t = float(text)
+            s = sqrt(t)
+            self.lineEdit.setText(str(s))
+        self.pushButton_14.clicked.connect(sqrtt)
+        # here is the most challenging button equasion featuring eval
+        def equasion() :
+            text = self.lineEdit.text()
+            result = eval(text)
+            self.lineEdit.setText(str(result))
+        self.pushButton_21.clicked.connect(equasion)
+        # many of other calculators portfolio does not feature dot
+        # but mine does >__<
+        def dot() :
+            text = self.lineEdit.text()
+            self.lineEdit.setText(text + ".")
+        self.pushButton_9.clicked.connect(dot)
+        # and at last the backshift (erase) button 
+        def backshift() :
+            text = self.lineEdit.text()
+            m = text.replace(text[-1] , "")
+            self.lineEdit.setText(m)
+        self.pushButton_17.clicked.connect(backshift)
 
+# this section is for opening and closing the window 
 
 if __name__ == "__main__":
     import sys
