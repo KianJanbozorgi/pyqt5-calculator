@@ -153,7 +153,7 @@ class Ui_MyCalculator(object):
         self.pushButton_16.clicked.connect(clear)
         def sqrtt() :
             text = self.lineEdit.text()
-            t = int(text)
+            t = float(text)
             s = sqrt(t)
             self.lineEdit.setText(str(s))
         self.pushButton_14.clicked.connect(sqrtt)
@@ -166,6 +166,12 @@ class Ui_MyCalculator(object):
             text = self.lineEdit.text()
             self.lineEdit.setText(text + ".")
         self.pushButton_9.clicked.connect(dot)
+
+        def backshift() :
+            text = self.lineEdit.text()
+            m = text.replace(text[-1] , "")
+            self.lineEdit.setText(m)
+        self.pushButton_17.clicked.connect(backshift)
         
         self.retranslateUi(MyCalculator)
         QtCore.QMetaObject.connectSlotsByName(MyCalculator)
